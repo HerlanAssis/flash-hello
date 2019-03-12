@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  # Cache Machines
+  cache:
+    build: cache/            
+    command: memcached -m 64    
+  server:
+    build: server/    
+    ports:
+      - "80:5000"
